@@ -1,13 +1,13 @@
 #-*- coding: utf-8 -*-
- import os
- from flask import Flask, request, jsonify
- import json
+import os
+from flask import Flask, request, jsonify
+import json
 
- app = Flask(__name__)
+app = Flask(__name__)
 
- default_buttons = ['파이썬 퀴즈', '웹 퀴즈', '컴퓨터 퀴즈']
+default_buttons = ['파이썬 퀴즈', '웹 퀴즈', '컴퓨터 퀴즈']
 
- quiz_dict = {'python_quiz_buttons' : ['Guido van Rossum', 'Mark Elliot Zuckerberg', 'Geoffrey Everest Hinton', 'Yann LeCun', 'Andrew Ng'],
+quiz_dict = {'python_quiz_buttons' : ['Guido van Rossum', 'Mark Elliot Zuckerberg', 'Geoffrey Everest Hinton', 'Yann LeCun', 'Andrew Ng'],
 'web_quiz_buttons': ["HTML", "XML", "XHTML", "MXML", "JSON"],
 'computer_quiz_buttons' : ['애니악', "에드삭", "에드박", "유니박","일리악"]}
 
@@ -86,8 +86,8 @@ def true_or_false():
             }
           }
 
-   return jsonify(response_data)
+    return jsonify(response_data)
 
 
- if __name__=="__main__":
-     app.run(host="0.0.0.0", port=5000)
+if __name__=="__main__":
+    app.run(host="0.0.0.0", port=5000)
