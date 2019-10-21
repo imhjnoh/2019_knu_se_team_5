@@ -18,7 +18,7 @@ def order():
     req = request.get_json()
 
     gamza_type = req["action"]["detailParams"]["감자종류"]["value"]
-    address = req["action"]["detailParams"]["sys_location"]["value"]
+    address = req["action"]["detailParams"]["sys_text"]["value"]
 
     if len(gamza_type) <= 0 or len(address) <= 0:
         answer = ERROR_MESSAGE
@@ -31,19 +31,11 @@ def order():
         "template": {
             "outputs": [
                 {
-                    "basicCard": {
-                        "title": gamza_type,
-                        "description": answer,
-                        "buttons" : [
-                            {
-                                "action": "webLink",
-                                "label": "LINK",
-                                "webLinkUrl": "https://www.provin.gangwon.kr/gw/portal/sub03_06?mode=listForm&searchGroup=83"
-
-                            }
-
-                        ]
+                    "simpleText":{
+                        "text":answer
                     }
+                    
+            
                 }
             ]
         }
