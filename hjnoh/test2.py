@@ -24,11 +24,12 @@ def order():
             "outputs": [
                 {
                     "basicCard": {
+                        "title": gamza_type,
                         # line 14-17 에서 정의했던 메시지 answer
                         "description": answer,
                         "buttons": [
                             {
-                                "action": "weblink",
+                                "action": "webLink",
                                 "label": "LINK",
                                 "webLinkUrl": "https://www.provin.gangwon.kr/gw/portal/sub03_06?mode=listForm&searchGroup=83"
 
