@@ -11,9 +11,9 @@
 ### test2 블록: 감자종류와 주소를 입력받고 출력
 - 주소는 카카오톡 기본 제공 엔티티 중 하나인 sys.location을 활용
 ## 테스트 화면
-![test2cap](test2.jpg)
+<img src="test2.jpg" alt="test2 capture" width="500">
 
-
+<br>
 ##reference
 - https://teamlab.github.io/jekyllDecent/blog/tutorials/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1_%EC%B1%97%EB%B4%87_%EB%A7%8C%EB%93%A4%EA%B8%B0_with_python_flask_aws
 - https://github.com/deepseasw/kakao_i_pizza_chatbot/blob/master/alphago_pizza.py
