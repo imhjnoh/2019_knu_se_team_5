@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+# app.route는 flask의 기능으로, '/gamza'와 같은 url로 요청이 들어오면 해당 함수만 호출한다.
 @app.route('/gamza', methods=['POST'])
 def order():
 
