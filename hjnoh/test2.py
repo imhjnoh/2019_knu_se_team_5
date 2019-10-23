@@ -1,42 +1,33 @@
-# 다음 코드의 테스트용 복사수정본
-# https://github.com/deepseasw/kakao_i_pizza_chatbot/blob/master/alphago_pizza.py
-
 from flask import Flask, request, jsonify
-
-
-ERROR_MESSAGE = '네트워크 접속에 문제가 발생하였습니다. 잠시 후 다시 시도해주세요.'
-
 
 app = Flask(__name__)
 
-
-# 피자 주문 스킬
-@app.route('/order', methods=['POST'])
+@app.route('/gamza', methods=['POST'])
 def order():
 
-    # 메시지 받기
+    # 카카오톡 서버에서 json 형식의 메시지 받기
     req = request.get_json()
-
+    # 메시지에서 데이터 받기
     gamza_type = req["action"]["detailParams"]["감자종류"]["value"]
     address = req["action"]["detailParams"]["sys_location"]["value"]
-
+    # answer에 보낼 메시지 할당
     if len(gamza_type) <= 0 or len(address) <= 0:
-        answer = ERROR_MESSAGE
+        answer = "ERROR"
     else:
         answer = gamza_type + "라는 감자가 아직은 없더라도 '" + address + "'주변에서 연구하고 있는 연구자가 있을지도 모르는 일입니다."
 
-    # 메시지 설정
+    # 카카오톡 서버로 보낼 메시지
     res = {
         "version": "2.0",
         "template": {
             "outputs": [
                 {
                     "basicCard": {
-                        "title": gamza_type,
+                        # line 14-17 에서 정의했던 메시지 answer
                         "description": answer,
-                        "buttons" : [
+                        "buttons": [
                             {
-                                "action": "webLink",
+                                "action": "weblink",
                                 "label": "LINK",
                                 "webLinkUrl": "https://www.provin.gangwon.kr/gw/portal/sub03_06?mode=listForm&searchGroup=83"
 
@@ -48,7 +39,7 @@ def order():
             ]
         }
     }
-
+    # 보낼 데이터를 json으로 변환하여 전송
     return jsonify(res)
 
 
