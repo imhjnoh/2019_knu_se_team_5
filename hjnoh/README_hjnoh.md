@@ -13,7 +13,6 @@
 ## 테스트 화면
 <img src="test2.jpg" alt="test2 capture" width="500">
 
-<br>
-##reference
+## reference
 - https://teamlab.github.io/jekyllDecent/blog/tutorials/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1_%EC%B1%97%EB%B4%87_%EB%A7%8C%EB%93%A4%EA%B8%B0_with_python_flask_aws
 - https://github.com/deepseasw/kakao_i_pizza_chatbot/blob/master/alphago_pizza.py
